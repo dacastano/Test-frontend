@@ -15,14 +15,14 @@ def step_impl(context, assertion, page_name):
                        f'The expected title is "{page_name}", but was "{context.current_page.get_title_page()}"')
 
 
-@then(u'I should be in the "(?P<page>.*)" page')
+@then(u'I should be in the "(.*)" page')
 def step_impl(context, page):
     context.current_page = context.all_contexts[page]
     return assert_that(context.current_page.is_open(), only_contains(True),
                        'Some element is not present in the opened page')
 
 
-@then(u'The page "(?P<expression>should|should not)" contain the next elements')
+@then(u'The page "(should|should not)" contain the next elements')
 def step_impl(context, expression):
     list_validation = context.browser.are_element_presents(context.table, context)
     assertion = transform_validation(expression)
@@ -48,7 +48,7 @@ def step_impl(context, element_name, element_type, expression):
     return assert_that(element_validation, equal_to(assertion))
 
 
-@then(u'The url page should be equal to the next "(?P<url>.*)" url')
+@then(u'The url page should be equal to the next "(.*)" url')
 def step_impl(context, url):
     GeneralComponents.wait_until_url_is(context.browser, url)
     return assert_that(context.web_driver.current_url, equal_to(url))
