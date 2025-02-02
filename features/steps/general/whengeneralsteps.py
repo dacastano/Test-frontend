@@ -6,7 +6,7 @@ from lib.helpers.generalhelpers import transformation_helper
 use_step_matcher("re")
 
 
-@when(u'I click on the "(?P<element_name>.*)" "(?P<element_type>button|dropdown|option)"')
+@when(u'I click on the "(.*)" "(.*)"')
 def step_impl(context, element_name, element_type):
     element_name = transformation_helper(element_name, element_type)
     if GeneralComponents.wait_until_element_is_clickable(

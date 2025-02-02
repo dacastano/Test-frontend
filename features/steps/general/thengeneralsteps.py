@@ -14,7 +14,6 @@ def step_impl(context, assertion, page_name):
     return assert_that(validation_result, equal_to(True),
                        f'The expected title is "{page_name}", but was "{context.current_page.get_title_page()}"')
 
-
 @then(u'I should be in the "(.*)" page')
 def step_impl(context, page):
     context.current_page = context.all_contexts[page]

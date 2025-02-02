@@ -1,5 +1,5 @@
 @regression_tests
-Feature: Validate element created dropdown column
+Feature: Validate Home Page Navigation
 
   Scenario: Navigate to the Kayak home page and validate principal elements
     Given I navigate to the kayak main page

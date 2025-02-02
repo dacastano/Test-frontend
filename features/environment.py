@@ -2,6 +2,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from lib.pages.basepage import BasePage
 from lib.pages.homepage import HomePage
+from lib.pages.flightspage import FlightsPage
+from lib.pages.stayspage import StaysPage
 
 
 def before_all(context):
@@ -12,9 +14,13 @@ def before_all(context):
     context.web_driver = driver
     context.browser = BasePage(context)
     context.home = HomePage(context)
+    context.flights = FlightsPage(context)
+    context.stays = StaysPage(context)
 
     contexts = {
         'home': context.home,
+        'flights': context.flights,
+        'stays': context.stays
     }
 
     context.all_contexts = contexts
