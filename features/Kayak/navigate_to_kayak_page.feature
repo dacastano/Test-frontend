@@ -14,7 +14,7 @@ Feature: Validate element created dropdown column
   Scenario: Validate URL of Home page
     Given I navigate to the kayak main page
     Then I should be in the "home" page
-    And The url page should be equal to the next "https://www.kayak.com/" url
+    And The url page should be equal to the next "https://www.kayak.com.co/" url
 
   Scenario Outline: Navigate between countries and validate the URL
     Given I navigate to the kayak main page
