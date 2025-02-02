@@ -6,7 +6,7 @@ from lib.pages.homepage import HomePage
 
 def before_all(context):
     driver = set_selenium_driver(context)
-    driver.set_page_load_timeout('0.5')
+    driver.set_page_load_timeout('30')
     driver.maximize_window()
 
     context.web_driver = driver
