@@ -11,9 +11,7 @@ logger = logging.getLogger(__name__)
 class StaysPage(BasePage):
 
     def __init__(self, context):
-        BasePage.__init__(self, context)
-        self.context = context
-        self.web_driver = context.browser
+        super().__init__(context)
         self.webElements = StaysWebElements
 
     def is_open(self):
